@@ -32,3 +32,17 @@ jobs:
           name: cypress-videos
           path: cypress/videos
           if-no-files-found: ignore
+
+      - name: Upload screenshots
+        users: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-screenshots
+          path: cypress/screenshots
+
+      - name: Upload videos
+        users: actions/upload-artifact@v3
+        if: failure()
+        with:
+          name: cypress-videos
+          path: cypress/videos
