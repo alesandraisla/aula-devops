@@ -24,7 +24,6 @@ jobs:
 
       - name: Upload screenshots
         users: actions/upload-artifact@v4
-        if: failure()
         with:
           name: cypress-screenshots
           path: cypress/screenshots
@@ -32,7 +31,6 @@ jobs:
 
       - name: Upload videos
         users: actions/upload-artifact@v4
-        if: failure()
         with:
           name: cypress-videos
           path: cypress/videos
